@@ -1,0 +1,18 @@
+{
+  "MIXED.DAT": {
+    "size": 40000,
+    "sha256": "ae6992e84492107f903431b4526fbd4a4d465bd80a58d45f9ac310c4365ac26f"
+  },
+  "RUNS.DAT": {
+    "size": 30000,
+    "sha256": "c9c5207f6d565d873f7d44e97addda746f1cd1370d487aa80295746a95401587"
+  },
+  "TEXT.DAT": {
+    "size": 60000,
+    "sha256": "5af385e336855f1c18b00ccfddb6bed2389251656a99fccb7bb008143ebc9a20"
+  },
+  "TINY.DAT": {
+    "size": 1,
+    "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881"
+  }
+}

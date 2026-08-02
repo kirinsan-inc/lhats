@@ -1,0 +1,72 @@
+{
+  "name": "@kirinsaninc/lhats",
+  "version": "0.1.0",
+  "description": "Pure TypeScript LZH (LHA) archive reader for Node.js and browsers. Zero dependencies, zero Node built-ins. Read-only by design.",
+  "keywords": [
+    "lzh",
+    "lha",
+    "lharc",
+    "archive",
+    "decompress",
+    "extract",
+    "lh5",
+    "lh7",
+    "shift-jis",
+    "cp932",
+    "zero-dependency",
+    "browser",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "kirinsan.inc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirinsan-inc/lhats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kirinsan-inc/lhats/issues"
+  },
+  "homepage": "https://github.com/kirinsan-inc/lhats#readme",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README.ja.md",
+    "LICENSE",
+    "NOTICE.md",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "pnpm run clean && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:matrix": "vitest run test/matrix",
+    "lint:pkg": "publint && attw --pack .",
+    "prepublishOnly": "pnpm run build && pnpm run test && pnpm run lint:pkg"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "fast-check": "^4.3.0",
+    "publint": "^0.3.14",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8"
+  }
+}

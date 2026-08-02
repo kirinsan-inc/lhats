@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+*.tgz
+
+# LHa for UNIX のビルド成果物とフィクスチャ生成の作業領域
+tools/.build/
+test/fixtures/matrix/
+
+.DS_Store

@@ -1,0 +1,170 @@
+{
+  "dirs_h1.lzh": {
+    "case": "dirs",
+    "encoding": "cp932",
+    "entries": {
+      "docs/日本語ファイル.txt": {
+        "headerLevel": 1,
+        "matchedInput": true,
+        "sha256": "8e1f508bc6c025e8a30f96c930e585289353c0f5c28af28597542378bf4d20f8",
+        "size": 26800
+      },
+      "画像/第一章/本文/ページ.txt": {
+        "headerLevel": 1,
+        "matchedInput": true,
+        "sha256": "bb154ab74831b65b6f2810454349b144799711eb02a4f5aeec8f7856e45c5356",
+        "size": 17200
+      },
+      "画像/第一章/表紙.txt": {
+        "headerLevel": 1,
+        "matchedInput": true,
+        "sha256": "be7b2a722efa9332459c469ce021f516a51106079a6f9175c7367242ed731dd0",
+        "size": 22000
+      }
+    },
+    "headerLevel": 1,
+    "producer": "LHa for UNIX version 1.14i-ac20260723 (aarch64-apple-darwin25.5.0)"
+  },
+  "dirs_h2.lzh": {
+    "case": "dirs",
+    "encoding": "cp932",
+    "entries": {
+      "docs/日本語ファイル.txt": {
+        "headerLevel": 2,
+        "matchedInput": true,
+        "sha256": "8e1f508bc6c025e8a30f96c930e585289353c0f5c28af28597542378bf4d20f8",
+        "size": 26800
+      },
+      "画像/第一章/本文/ページ.txt": {
+        "headerLevel": 2,
+        "matchedInput": true,
+        "sha256": "bb154ab74831b65b6f2810454349b144799711eb02a4f5aeec8f7856e45c5356",
+        "size": 17200
+      },
+      "画像/第一章/表紙.txt": {
+        "headerLevel": 2,
+        "matchedInput": true,
+        "sha256": "be7b2a722efa9332459c469ce021f516a51106079a6f9175c7367242ed731dd0",
+        "size": 22000
+      }
+    },
+    "headerLevel": 2,
+    "producer": "LHa for UNIX version 1.14i-ac20260723 (aarch64-apple-darwin25.5.0)"
+  },
+  "lfn_h1.lzh": {
+    "case": "lfn",
+    "encoding": "cp932",
+    "entries": {
+      "this-is-a-fairly-long-file-name-that-cannot-fit-in-8dot3.txt": {
+        "headerLevel": 1,
+        "matchedInput": true,
+        "sha256": "595a890d9f71619bf6b9ea62b598416fc2b0310897747e8f396206f755c68d27",
+        "size": 18800
+      },
+      "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.txt": {
+        "headerLevel": 1,
+        "matchedInput": true,
+        "sha256": "e9901c244b19b7130b579f589e2d1db7f9d9938a645e606684bddbddc1bcf70e",
+        "size": 15200
+      },
+      "名前が長い日本語のファイル名で八点三形式には到底収まらないもの.txt": {
+        "headerLevel": 1,
+        "matchedInput": true,
+        "sha256": "8d4cb9ab8ff647790845a53b5495ce883cb223e43253580884073ea0f9917c47",
+        "size": 20800
+      }
+    },
+    "headerLevel": 1,
+    "producer": "LHa for UNIX version 1.14i-ac20260723 (aarch64-apple-darwin25.5.0)"
+  },
+  "lfn_h2.lzh": {
+    "case": "lfn",
+    "encoding": "cp932",
+    "entries": {
+      "this-is-a-fairly-long-file-name-that-cannot-fit-in-8dot3.txt": {
+        "headerLevel": 2,
+        "matchedInput": true,
+        "sha256": "595a890d9f71619bf6b9ea62b598416fc2b0310897747e8f396206f755c68d27",
+        "size": 18800
+      },
+      "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.txt": {
+        "headerLevel": 2,
+        "matchedInput": true,
+        "sha256": "e9901c244b19b7130b579f589e2d1db7f9d9938a645e606684bddbddc1bcf70e",
+        "size": 15200
+      },
+      "名前が長い日本語のファイル名で八点三形式には到底収まらないもの.txt": {
+        "headerLevel": 2,
+        "matchedInput": true,
+        "sha256": "8d4cb9ab8ff647790845a53b5495ce883cb223e43253580884073ea0f9917c47",
+        "size": 20800
+      }
+    },
+    "headerLevel": 2,
+    "producer": "LHa for UNIX version 1.14i-ac20260723 (aarch64-apple-darwin25.5.0)"
+  },
+  "sjis_h1.lzh": {
+    "case": "sjis",
+    "encoding": "cp932",
+    "entries": {
+      "ねこ.txt": {
+        "headerLevel": 1,
+        "matchedInput": true,
+        "sha256": "881af947a07ec101c10b59ef5fc8b313ca8e9056ba33c130e39f770b45f6f88d",
+        "size": 16000
+      },
+      "ローフ.txt": {
+        "headerLevel": 1,
+        "matchedInput": true,
+        "sha256": "82a6744e4ea4f5e3a0f630da0700315788ad77d261546409beb0fd0084d4b664",
+        "size": 16000
+      },
+      "書庫圧縮.txt": {
+        "headerLevel": 1,
+        "matchedInput": true,
+        "sha256": "75a3a97a38c8b6b1eef4d8ae3fb1123ce5362cbcd808bac08e147ff7fcb23db0",
+        "size": 13600
+      },
+      "ＮｅｋｏＬｏａｆ.txt": {
+        "headerLevel": 1,
+        "matchedInput": true,
+        "sha256": "4b5e193380e8871de61144f957d62f71eec40d0b0d0aa04bb4371a1bbd2d0589",
+        "size": 16000
+      }
+    },
+    "headerLevel": 1,
+    "producer": "LHa for UNIX version 1.14i-ac20260723 (aarch64-apple-darwin25.5.0)"
+  },
+  "sjis_h2.lzh": {
+    "case": "sjis",
+    "encoding": "cp932",
+    "entries": {
+      "ねこ.txt": {
+        "headerLevel": 2,
+        "matchedInput": true,
+        "sha256": "881af947a07ec101c10b59ef5fc8b313ca8e9056ba33c130e39f770b45f6f88d",
+        "size": 16000
+      },
+      "ローフ.txt": {
+        "headerLevel": 2,
+        "matchedInput": true,
+        "sha256": "82a6744e4ea4f5e3a0f630da0700315788ad77d261546409beb0fd0084d4b664",
+        "size": 16000
+      },
+      "書庫圧縮.txt": {
+        "headerLevel": 2,
+        "matchedInput": true,
+        "sha256": "75a3a97a38c8b6b1eef4d8ae3fb1123ce5362cbcd808bac08e147ff7fcb23db0",
+        "size": 13600
+      },
+      "ＮｅｋｏＬｏａｆ.txt": {
+        "headerLevel": 2,
+        "matchedInput": true,
+        "sha256": "4b5e193380e8871de61144f957d62f71eec40d0b0d0aa04bb4371a1bbd2d0589",
+        "size": 16000
+      }
+    },
+    "headerLevel": 2,
+    "producer": "LHa for UNIX version 1.14i-ac20260723 (aarch64-apple-darwin25.5.0)"
+  }
+}

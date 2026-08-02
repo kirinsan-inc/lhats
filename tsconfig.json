@@ -1,0 +1,34 @@
+{
+  // ライブラリ本体は Node 組み込みにも DOM 固有 API にも依存しない。
+  // `types` を空にして @types/node が暗黙に混ざらないようにしている
+  // （混ざると Buffer や process をうっかり使っても型エラーにならない）。
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": [],
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // 型注釈を消すだけで実行できる構文に限定する。
+    // Node の --experimental-strip-types や、型剥がしのみを行う
+    // バンドラーからそのまま使えるようになる。
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "erasableSyntaxOnly": true,
+
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*.ts"]
+}
