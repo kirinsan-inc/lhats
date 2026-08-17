@@ -31,6 +31,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
+        with:
+          # pnpm 11 は Node >= 22.13 を要求するため、Node 20 のジョブでは
+          # 通常の pnpm が起動できない。standalone 版は Node ランタイムを
+          # 同梱しており、ジョブ側の Node バージョンに依存しない
+          # (テスト自体は matrix の Node で実行される)
+          standalone: true
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
