@@ -1,0 +1,67 @@
+# CI — push / PR ごとの検証。
+#
+# test:    3 OS × 3 Node で typecheck + build + テスト。
+#          Windows を入れているのは、パス区切りや改行の前提混入を
+#          もっとも安く検出できるため (LZH の利用者層も Windows 寄り)。
+#          網羅 corpus (LZH_MATRIX_DIR) は外部ツールが要るため CI では
+#          スキップされる。同梱フィクスチャだけで主要経路は押さえてある。
+#
+# package: 公開物の健全性。publint / are-the-types-wrong に加えて、
+#          dist に Node 依存や移植元アプリの文字列が漏れていないことを
+#          機械的に確認する。
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node: [20, 22, 24]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck
+      - run: pnpm run build
+      - run: pnpm run test
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+      - run: pnpm run lint:pkg
+      - run: npm pack --dry-run
+      - name: dist に Node 依存が漏れていないか
+        run: |
+          if grep -rnE "require\(|from ['\"]node:|process\.|Buffer" dist/; then
+            echo "::error::dist/ に Node 依存が混入しています"
+            exit 1
+          fi
+      - name: dist に移植元アプリの文字列が残っていないか
+        run: |
+          if grep -rniE "nekoloaf" dist/; then
+            echo "::error::dist/ に移植元アプリの文字列が残っています"
+            exit 1
+          fi

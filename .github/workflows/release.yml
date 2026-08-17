@@ -1,0 +1,57 @@
+# Release — v*.*.* タグの push で npm に publish する。
+#
+# 認証は npm の Trusted Publishing (OIDC) を使う。トークンは一切使わない。
+# `permissions: id-token: write` がその許可で、npm 側でこのリポジトリの
+# このワークフローファイルを Trusted Publisher として登録してあることが前提。
+#
+# 前提 (初回のみ、手作業):
+#   1. 初回の publish はローカルから行う
+#      (Trusted Publisher の登録はパッケージが存在してからでないとできない)
+#   2. npmjs.com のパッケージページ → Settings → Trusted Publisher に
+#      GitHub Actions / kirinsan-inc/lhats / release.yml を登録
+#   3. リポジトリをパブリックにする (provenance の生成条件)
+#
+# provenance は「この成果物がこのリポジトリのこのコミットから
+# このワークフローでビルドされた」ことの署名付き証明で、
+# npm のパッケージページに検証済みバッジとして表示される。
+
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: read
+  id-token: write # OIDC (Trusted Publishing と provenance) に必須
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          # OIDC での publish は npm >= 11.5.1 が必要。Node 24 は npm 11 を同梱する
+          node-version: 24
+          cache: pnpm
+          registry-url: "https://registry.npmjs.org"
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: タグと package.json のバージョンが一致するか
+        run: |
+          pkg="v$(node -p "require('./package.json').version")"
+          if [ "$pkg" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::package.json は $pkg だがタグは $GITHUB_REF_NAME"
+            exit 1
+          fi
+
+      - run: pnpm run typecheck
+      - run: pnpm run build
+      - run: pnpm run test
+      - run: pnpm run lint:pkg
+
+      - name: publish (provenance 付き)
+        run: npm publish --provenance --access public
